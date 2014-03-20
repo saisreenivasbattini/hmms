@@ -1,0 +1,574 @@
+.ellipses {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/*
+ * Retina backgrounds
+ * This is important. Especially because these images are coming from the CDN.
+ * Generate images at 1x and 2x sizes. Pass in the width and height of the 1x
+ * image. The mixin will double it for you. I encourage you to download
+ * ImageAlpha and convert png24s to png8s to more than 1/2 the size.
+ *
+ * File naming conventions:
+ * Your images will break if you do not name them conventionally. Two images
+ * must exist. File name, target resolution, png type. Use the following format:
+ *
+ * 1x resolution images: file-name@1x-8.png
+ * 2x resolution images: file-name@2x-8.png
+ *
+ * @param @c    - Background color.
+ * @param @file - File path RELATIVE to the root /images directory.
+ *    ex. .retina-bg(@file: "home/uber-app/file-name")
+ * @param @ext  - File extension with leading dot.
+ * @param @xo   - X axis offset.
+ * @param @yo   - Y axis offset.
+ * @param @w    - Width of image at 0.5x resolution.
+ * @param @h    - Height of image at 0.5x resolution.
+ */
+.pattern-bg-lite {
+  background: #ffffff url('https://d1a3f4spazzrp4.cloudfront.net/web-fresh/pattern-grid@1x.jpg') repeat left top;
+  background-size: 18px 18px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2), (-ms-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .pattern-bg-lite {
+    background: #ffffff url('https://d1a3f4spazzrp4.cloudfront.net/web-fresh/pattern-grid@2x.jpg') repeat left top;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2), (-ms-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .pattern-bg-lite {
+    background-size: 18px 18px;
+  }
+}
+.pattern-bg-dark {
+  background: #202024 url('https://d1a3f4spazzrp4.cloudfront.net/web-fresh/pattern-grid-dark@1x.gif') repeat left top;
+  background-size: 18px 18px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2), (-ms-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .pattern-bg-dark {
+    background: #202024 url('https://d1a3f4spazzrp4.cloudfront.net/web-fresh/pattern-grid-dark@2x.gif') repeat left top;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2), (-ms-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .pattern-bg-dark {
+    background-size: 18px 18px;
+  }
+}
+.transition-off {
+  webkit-transition: none !important;
+  -moz-transition: none !important;
+  -o-transition: none !important;
+  transition: none !important;
+  -webkit-backface-visibility: hidden;
+}
+.focused-view {
+  padding: 38px 0 0;
+  border: 0;
+  margin-top: 0;
+}
+.focused-view-subtitle {
+  margin-bottom: 30px;
+}
+@media (max-width: 500px) {
+  .focused-view {
+    padding: 15px 0 0;
+  }
+}
+/* Styled global navs */
+.islet,
+.island,
+.landmark {
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.islet {
+  margin-bottom: 25px;
+}
+.island {
+  margin-bottom: 60px;
+}
+.landmark {
+  margin-bottom: 76px;
+}
+@media (max-width: 500px) {
+  .island {
+    margin-bottom: 35px;
+  }
+  .landmark {
+    margin-bottom: 55px;
+  }
+}
+/* style placeholder color */
+::-webkit-input-placeholder {
+  color: #898989;
+}
+::-moz-placeholder {
+  color: #898989;
+}
+::-ms-input-placeholder {
+  color: #898989;
+}
+.global-container {
+  background-color: #000;
+}
+.head-fade {
+  display: none;
+}
+.signup-form {
+  display: block;
+  margin: 0 auto;
+  max-width: 505px;
+}
+.signup-form .form-top {
+  padding-right: 10px;
+}
+a {
+  font-size: 14px;
+}
+.subtitle {
+  font-weight: normal;
+  font-size: 17px;
+  color: #c2c2c2;
+  margin-bottom: 50px;
+  text-align: center;
+}
+.uber-logo-container + .subtitle {
+  margin-top: 70px;
+}
+.signup-header {
+  margin-top: 16px;
+}
+.close-lines,
+.close-lines p {
+  line-height: 21px;
+}
+.signup-value-border {
+  margin-top: 4px;
+}
+.signup-value-prop,
+.complex-value-prop {
+  margin-top: 55px;
+}
+@media (max-width: 500px) {
+  .signup-value-prop,
+  .complex-value-prop {
+    margin-top: 25px;
+  }
+}
+.complex-value-prop {
+  text-align: center;
+  /* .center */
+
+  padding-bottom: 47px;
+  /* .well */
+
+  margin-bottom: 30px;
+}
+.complex-value-prop .value-prop-title {
+  padding-top: 47px;
+  line-height: 30px;
+}
+.complex-value-prop img {
+  margin-top: 27px;
+}
+.complex-value-prop img + .value-prop-title {
+  padding-top: 27px;
+}
+@media (max-width: 500px) {
+  .complex-value-prop {
+    padding-bottom: 22px;
+    /* .well */
+  
+    margin-bottom: 55px;
+  }
+  .complex-value-prop .value-prop-title {
+    padding-top: 22px;
+    line-height: 25px;
+  }
+  .complex-value-prop img {
+    margin-top: 13px;
+  }
+  .complex-value-prop img + .value-prop-title {
+    padding-top: 13px;
+  }
+}
+.error-list-container {
+  margin-bottom: 50px;
+  display: none;
+}
+.error-list-container p,
+.error-list-container ul {
+  text-transform: uppercase;
+  color: #f32f00;
+  font-size: 12px;
+}
+.error-list-container ul {
+  padding-top: 10px;
+  padding-left: 20px;
+}
+.error-list-container ul li {
+  margin-bottom: 10px;
+  line-height: 14px;
+}
+.uber-badge {
+  background: transparent url('https://d1a3f4spazzrp4.cloudfront.net/web-fresh/uber-badge@1x-8.png') no-repeat left top;
+  width: 36px;
+  height: 36px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2), (-ms-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .uber-badge {
+    background: transparent url('https://d1a3f4spazzrp4.cloudfront.net/web-fresh/uber-badge@2x-8.png') no-repeat left top;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2), (-ms-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .uber-badge {
+    background-size: 36px 36px;
+  }
+}
+/* TODO completed needs to be doubled
+ * defined because the completed class is
+ * used in two separate contexts that dont
+ * line up.
+ */
+.border-center .completed {
+  display: none;
+}
+.border-center.complete .incomplete {
+  display: none;
+}
+.border-center.complete .completed {
+  display: inline-block;
+}
+.completed {
+  display: none;
+}
+.complete .incomplete {
+  display: none;
+}
+.complete .completed {
+  display: inline-block;
+}
+form p,
+form input,
+form select,
+form label {
+  font-family: "ff-clan-web-pro-wide", sans-serif;
+}
+form > div {
+  padding-bottom: 20px;
+}
+form > div > div {
+  padding-right: 10px;
+}
+form .push-right {
+  padding-right: 10px;
+}
+form .promo-wrapper {
+  position: relative;
+}
+form .promo-wrapper img {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+form label {
+  display: inline-block;
+  padding-bottom: 12px;
+  font-size: 11px;
+  color: #fff;
+  text-transform: uppercase;
+}
+form select,
+form input {
+  width: 100%;
+  padding: 18px 10px;
+  font-size: 14px;
+  -webkit-appearance: none;
+  border: none;
+  height: 56px;
+  border: 2px solid #fff;
+  -webkit-border-radius: 1.5px;
+  -moz-border-radius: 1.5px;
+  border-radius: 1.5px;
+}
+form select {
+  background: #ffffff url('https://d1a3f4spazzrp4.cloudfront.net/web-fresh/global/select-bg@1x.gif') no-repeat right 4px;
+  background-size: 48px 46px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2), (-ms-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  form select {
+    background: #ffffff url('https://d1a3f4spazzrp4.cloudfront.net/web-fresh/global/select-bg@2x.gif') no-repeat right 4px;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2), (-ms-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  form select {
+    background-size: 48px 46px;
+  }
+}
+form .error-note {
+  display: none;
+}
+form .error .error-note {
+  display: block;
+  color: #f00;
+}
+form .error input {
+  border-color: #f32f00;
+  color: #f32f00;
+  /* LESS won't let me collect these together with commas :( */
+
+}
+form .error input::-webkit-input-placeholder {
+  /* WebKit browsers */
+
+  color: #eb2323;
+}
+form .error input:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+
+  color: #eb2323;
+}
+form .error input::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+
+  color: #eb2323;
+}
+form .error input:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+
+  color: #eb2323;
+}
+form .agree-terms {
+  text-align: center;
+}
+form .agree-terms p {
+  letter-spacing: 0px;
+}
+form .agree-terms a {
+  text-transform: none;
+  text-decoration: underline;
+}
+@media (max-width: 500px) {
+  form > div > div {
+    padding-right: 6px;
+  }
+  form .push-right {
+    padding-right: 6px;
+  }
+  form label {
+    padding-bottom: 10px;
+  }
+  form select,
+  form input {
+    padding: 11px 10px;
+    font-size: 11px;
+    height: 44px;
+  }
+  form select {
+    background: #ffffff url('https://d1a3f4spazzrp4.cloudfront.net/web-fresh/global/select-bg@1x.gif') no-repeat right 3px;
+    background-size: 36px 34px;
+  }
+}
+@media (max-width: 500px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 500px) and (min--moz-device-pixel-ratio: 2), (max-width: 500px) and (-moz-min-device-pixel-ratio: 2), (max-width: 500px) and (-ms-min-device-pixel-ratio: 2), (max-width: 500px) and (min-device-pixel-ratio: 2), (max-width: 500px) and (min-resolution: 192dpi) {
+  form select {
+    background: #ffffff url('https://d1a3f4spazzrp4.cloudfront.net/web-fresh/global/select-bg@2x.gif') no-repeat right 3px;
+  }
+}
+@media (max-width: 500px) and (-webkit-min-device-pixel-ratio: 2), (max-width: 500px) and (min--moz-device-pixel-ratio: 2), (max-width: 500px) and (-moz-min-device-pixel-ratio: 2), (max-width: 500px) and (-ms-min-device-pixel-ratio: 2), (max-width: 500px) and (min-device-pixel-ratio: 2), (max-width: 500px) and (min-resolution: 192dpi) {
+  form select {
+    background-size: 36px 34px;
+  }
+}
+.app-info {
+  min-height: 282px;
+  padding: 110px 20px 90px 220px;
+  background: transparent url('https://d1a3f4spazzrp4.cloudfront.net/web-fresh/global/sprite@1x-8.png') no-repeat -493px 28px;
+  border-top: 1px solid #52525c;
+  margin-top: 24px;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2), (-ms-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .app-info {
+    background: transparent url('https://d1a3f4spazzrp4.cloudfront.net/web-fresh/global/sprite@2x-8.png') no-repeat -493px 28px;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2), (-ms-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .app-info {
+    background-size: 690px 264px;
+  }
+}
+.get-app {
+  padding-top: 25px;
+  width: 100%;
+}
+.get-app p {
+  font-size: 17px;
+  color: #f2f2f2;
+  text-align: center;
+  text-transform: uppercase;
+}
+.get-app .iphone-or-andriod {
+  height: 340px;
+  margin-top: 20px;
+  background: transparent url('https://d1a3f4spazzrp4.cloudfront.net/web-fresh/forms/complete-phones@1x.jpg') no-repeat left top;
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2), (-ms-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .get-app .iphone-or-andriod {
+    background: transparent url('https://d1a3f4spazzrp4.cloudfront.net/web-fresh/forms/complete-phones@2x.jpg') no-repeat left top;
+  }
+}
+@media (-webkit-min-device-pixel-ratio: 2), (min--moz-device-pixel-ratio: 2), (-moz-min-device-pixel-ratio: 2), (-ms-min-device-pixel-ratio: 2), (min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .get-app .iphone-or-andriod {
+    background-size: 530px 340px;
+  }
+}
+.get-app .downloads a {
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  border: 1px solid #fff;
+}
+.get-app .cta {
+  display: none;
+  width: 100%;
+  padding: 20px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  background-color: #1ebad6;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+}
+.back-home {
+  width: 100%;
+  position: relative;
+  bottom: -35px;
+  text-align: center;
+}
+.back-home:hover {
+  text-decoration: underline;
+}
+.footnote {
+  display: block;
+  max-width: 475px;
+  margin: 0 auto;
+  padding: 10px 0 100px;
+  text-align: center;
+}
+.footnote p {
+  font-size: 11px;
+  line-height: 20px;
+  color: #898989;
+  padding-bottom: 40px;
+}
+.mobile-country-number-container {
+  margin: 0px 0px 0px 2px;
+  position: relative;
+  padding: 12px 10px;
+  font-size: 14px;
+  width: 80px;
+  height: 54px;
+  top: -54px;
+  z-index: 1;
+  text-align: center;
+  background-color: #f1f1f1;
+  border: 2px solid #f1f1f1;
+  -webkit-appearance: none;
+  -webkit-border-radius: 1.5px 0 0 1.5px;
+  -moz-border-radius: 1.5px 0 0 1.5px;
+  border-radius: 1.5px 0 0 1.5px;
+}
+.mobile-country-number-container p {
+  font-size: 14px;
+  color: black;
+}
+.mobile-number {
+  padding-left: 90px;
+}
+@media (max-width: 500px) {
+  .mobile-country-number-container {
+    margin: 0;
+    padding: 11px 10px;
+    font-size: 11px;
+    height: 44px;
+    top: -44px;
+  }
+  .mobile-country-number-container p {
+    font-size: 11px;
+  }
+}
+.mobile-bottom-margin {
+  margin-bottom: -56px;
+}
+@media screen and (max-width: 1000px) {
+  .get-app {
+    width: 100%;
+  }
+  .get-app .cta {
+    display: inline-block;
+  }
+}
+@media screen and (min-width: 500px) and (max-width: 800px) {
+  .get-app .cta {
+    display: inline-block;
+  }
+}
+@media screen and (max-width: 500px) {
+  .get-app {
+    padding-right: 10px;
+    padding-top: 0px;
+    margin-top: -10px;
+  }
+  .get-app .cta {
+    display: inline-block;
+  }
+  .logo {
+    width: 90px;
+    height: 13px;
+    background-size: 90px 13px;
+  }
+  .uber-logo-container + .subtitle {
+    margin-top: 50px;
+  }
+  .subtitle {
+    font-size: 11px;
+  }
+  .zip {
+    padding-top: 20px;
+  }
+  .agree-terms p {
+    letter-spacing: 0px;
+  }
+  .agree-terms a {
+    font-size: 11px;
+  }
+  input[type="text"],
+  input[type="password"],
+  .btn,
+  label,
+  a {
+    font-size: 11px;
+  }
+  .error-list-container {
+    font-size: 11px;
+  }
+  .error-list-container p {
+    background-color: #f32f00;
+    padding: 15px;
+  }
+  .error-list-container p,
+  .error-list-container ul {
+    text-transform: uppercase;
+    color: #ffffff;
+    font-size: 12px;
+  }
+  .error-list-container ul {
+    background-color: #940f12;
+    padding: 15px 35px 2px;
+  }
+  .error-list-container ul li {
+    margin: 0;
+    padding-bottom: 13px;
+    line-height: 14px;
+  }
+}
