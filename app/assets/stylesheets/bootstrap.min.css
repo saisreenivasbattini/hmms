@@ -614,7 +614,7 @@ pre code {
 	width:100%
 }
 .col-xs-push-4 {
-left:5.66666666666667%	
+left:5.66666666666667%
 }
 @media(min-width:768px) {
 .container {
@@ -1662,8 +1662,8 @@ transition:height .35s ease
 }
 @font-face {
 font-family:'Glyphicons Halflings';
-src:url('../fonts/glyphicons-halflings-regular.eot');
-src:url('../fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg')
+src:url('/assets/glyphicons-halflings-regular.eot');
+src:url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg')
 }
 .glyphicon {
 	position:relative;
@@ -5088,5 +5088,5 @@ th.hidden-print, td.hidden-print {
 	line-height:1.33;
 	border-radius:6px;
 	background-color:#fff;
-	
+
 }
