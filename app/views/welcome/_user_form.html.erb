@@ -1,0 +1,51 @@
+<div style="background-color:#d15c00; padding:10px; height:40px; border-radius:2px;" class="col-lg-10 col-md-12 col-sm-12 col-xs-12">
+  <%= form_for('user', as: 'user', url: registration_path('user'), :html => { :id => 'home_page_user_form' }) do |f| %>  
+
+	<ul>
+	<li class="col-lg-1" style="float:left;list-style:none;">
+		<%= f.radio_button :rold_id, 1 %>
+	</li>
+	<li class="col-lg-3" style="float:left;list-style:none;">
+		Provider
+	</li>
+	<li class="col-lg-1" style="float:left;list-style:none;">
+		<%= f.radio_button :rold_id, 2 %> 
+	</li>
+	<li class="col-lg-3" style="float:left;list-style:none;">
+		Broker
+	 </li> 
+	</ul>
+</div>
+	<ul >
+
+		<div class="clearfix"></div>
+		<li class="wrds col-lg-10">Full Name</li>
+		<li class="col-lg-10">
+			      <%= f.text_field :full_name,  class: 'form-control input-lg m-bot15' %>
+		</li>
+		<li class="wrds col-lg-10">License Number</li>
+		<li class=" col-lg-10"><%= f.text_field :license_number, class: 'form-control input-lg m-bot15 required'%></li>
+		<div class="clearfix"></div>
+		<li class="col-lg-1" style="float:left;list-style:none;">
+			<%=  f.check_box :terms,{:checked=>true}, class: 'required' %>
+			</li>
+		<li class="forbuy_txt col-lg-9">I verify that i have read all <a href="#"> Terms & Conditions </a>and that i represent no other party than myself</li>
+	</ul>
+
+</div>
+
+<div class="forbuy col-lg-push-2 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+	<ul>
+		<li class="wrds col-lg-10">Email Address</li>
+		<li class=" col-lg-10">  <%= f.email_field :email,  class: 'form-control input-lg m-bot15 required email' %></li>
+		<li class="wrds col-lg-10">Password</li>
+		<li class=" col-lg-10">   <%= f.password_field :password, autocomplete: "off", class: 'form-control input-lg m-bot15 required' %></li>
+		<li class="wrds col-lg-10">Verify Password</li>
+		<li class=" col-lg-10"><%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control input-lg m-bot15 required' %></li>
+		<li class=" col-lg-10">
+			<button type="submit" class="btn btn-shadow btn-info">SIGN UP</button>
+			</li><br><br>
+
+	</ul>
+   <% end %>
+</div>

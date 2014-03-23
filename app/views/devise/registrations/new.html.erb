@@ -1,0 +1,26 @@
+<h2>Sign up1</h2>
+
+<%= render :partial => 'form'%>
+
+<%= render "devise/shared/links" %>  
+ <script src="/assets/jquery.js"></script>
+ <script src="/assets/jquery.validate.min.js"></script>
+<script>
+         $(document).ready(function () {
+
+    $('#new_user').validate({ 
+	      		rules: {
+			            "#user_full_name": {
+			                required: true
+			            }
+			        },
+	      
+	      submitHandler: function (form) {
+				    alert('is good');
+				    return false;
+				}
+   }); 
+
+
+});
+</script>
