@@ -20,7 +20,14 @@ Health::Application.configure do
   config.active_support.deprecation = :log
 
   # Raise an error on page load if there are pending migrations
-  config.active_record.migration_error = :page_load
+  config.active_record.migration_error = :page_load   
+  
+  config.action_mailer.default_url_options = {:host => "localhost:5500"}   
+  
+  config.action_mailer.asset_host = "http://localhost:5500"
+   
+
+  config.action_mailer.smtp_settings = { address: 'localhost', port: 1025 }
 
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
