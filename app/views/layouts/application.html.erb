@@ -29,23 +29,23 @@
     <!-- Custom styles for this template -->
   <link href="/assets/style.css" rel="stylesheet">
    <link href="/assets/style-responsive.css" rel="stylesheet" />
+   	<script src="/assets/jquery.js"></script>
+	 <script src="/assets/jquery.validate.min.js"></script>
+	<script>
+	         $(document).ready(function () {
 
+	    $('#new_user').validate(); 
+
+
+	});
+	</script>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
 <%= yield %>  
 
-<script src="/assets/jquery.js"></script>
- <script src="/assets/jquery.validate.min.js"></script>
-<script>
-         $(document).ready(function () {
 
-    $('#new_user').validate(); 
-
-
-});
-</script>
 
 </body>
 </html>

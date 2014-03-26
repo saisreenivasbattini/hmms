@@ -44,8 +44,30 @@
 				</ul>
 			</div>
 			<div class="forbuy col-lg-push-2 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+				<% if session[:new_account_created] && session[:new_account_created] == true  %>  
 				
-				<%= render :partial => 'user_form'%> 
+				
+				<div class="col-lg-12">
+					<ul>
+						<li style="list-style:none;"><h3 class="wrd_white col-lg-12 col-lg-push-4 col-md-push-4">Congratulations</h3></li>
+						<li style="list-style:none;" class="forbuy_txt">You Professional information has been verified.</li>  
+						<li style="list-style:none;" class="forbuy_txt">You may post or shop for listing as a </li>    
+						<li style="list-style:none;" class="forbuy_txt">Qualified HMM Member!  </li>   
+						<li style="list-style:none;" class="forbuy_txt"> <a type="submit" class="btn btn-shadow btn-info">CREATE A LISTING</a>     </li>   
+						<li style="list-style:none;" class="forbuy_txt"> <a type="submit" class="btn btn-shadow btn-info">BROWSE A MARKET PLACE</a>    </li>    
+					</ul>
+				</div>
+			
+				    <script>    
+				 $(document).ready(function () {   
+					     $('#div_name1').hide();
+					     $('#div_name2').show(); 
+					})
+					   </script>
+				<% else %>  
+				 
+				      <%= render :partial => 'user_form'%> 
+				<% end %>
 
 			</div> 
 		</div>  
