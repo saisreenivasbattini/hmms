@@ -1,0 +1,33 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  state: MyString
+  region: MyString
+  type_of_practice: MyString
+  average_annual_collections: 9.99
+  average_annual_visits: 1
+  street_address: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  phone: MyString
+  email: MyString
+  low: 9.99
+  high: 9.99
+  user_id: 1
+
+two:
+  state: MyString
+  region: MyString
+  type_of_practice: MyString
+  average_annual_collections: 9.99
+  average_annual_visits: 1
+  street_address: MyString
+  city: MyString
+  state: MyString
+  zip: MyString
+  phone: MyString
+  email: MyString
+  low: 9.99
+  high: 9.99
+  user_id: 1

@@ -1,4 +1,6 @@
 Health::Application.routes.draw do
+  resources :listings
+
  # devise_for :users  
   
   devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions" } 
