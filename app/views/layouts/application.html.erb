@@ -8,7 +8,7 @@
     <meta name="author" content="Mosaddek">
 
 
-     <link rel="stylesheet" href="/assets/menu/style.css">
+<link rel="stylesheet" href="/assets/menu/style.css">
 <link rel="stylesheet" href="/assets/menu/slicknav.css">
 <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
@@ -34,7 +34,18 @@
 </head>
 <body>
 
-<%= yield %>
+<%= yield %>  
+
+<script src="/assets/jquery.js"></script>
+ <script src="/assets/jquery.validate.min.js"></script>
+<script>
+         $(document).ready(function () {
+
+    $('#new_user').validate(); 
+
+
+});
+</script>
 
 </body>
 </html>

@@ -3,11 +3,23 @@
 
 <header class="global-header" >
 	<div class=" col-lg-12">
-		<div class=" col-lg-10 col-md-10 col-sm-9 col-xs-8"> <a href="index.html"> <img src="/assets/logo.png" > </a></div>
+		<div class=" col-lg-10 col-md-10 col-sm-9 col-xs-8"> <a href="<%= '/' %>"> <img src="/assets/logo.png" > </a></div>
 
-		<div class="login_text col-lg-1 col-md-1 col-sm-1 col-xs-2">Login</div>
-		<div class="reg_button col-lg-1 col-md-1 col-sm-1 col-xs-2 "><a onclick="document.getElementById('div_name1').style.display=''; document.getElementById('div_name2').style.display='';return false;"
-			href="" style="text-decoration:none;"> <button type="button" class="btn btn-shadow btn-danger" style="width:100px;">REGISTER</button></a>  </div>
+		<div class="login_text col-lg-1 col-md-1 col-sm-1 col-xs-2">  
+			 <% if current_user %>
+			  <%= link_to 'Logout', destroy_user_session_path, :style => 'color: #e97c00;' %>  
+			 <% else %>  
+			<a onclick="document.getElementById('div_name3').style.display=''; document.getElementById('div_name1').style.display='none';document.getElementById('div_name2').style.display='none';return false;" href="" style="text-decoration:none;"> 
+				<button type="button" class="btn btn-shadow btn-danger" style="width:100px;">Login</button>
+			</a>
+		    <%#= link_to 'Login', new_user_session_path, :style => 'color: #e97c00;' %>  
+			 <% end %>
+		</div>
+		<div class="reg_button col-lg-1 col-md-1 col-sm-1 col-xs-2 ">
+			<a onclick="document.getElementById('div_name1').style.display=''; document.getElementById('div_name2').style.display='';return false;" href="" style="text-decoration:none;"> 
+				<button type="button" class="btn btn-shadow btn-danger" style="width:100px;">REGISTER</button>
+			</a> 
+		</div>
 			<div class="clearfix"></div>
 			<div style="display:none" id="div_name2">
 				<div class=" col-lg-10 col-md-10 col-sm-9 col-xs-8"> <a href="index.html">&nbsp;</a></div>
@@ -23,8 +35,7 @@
  
 		</header>
 
-
-
+  
 		<div id="div_name1"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="display:none; background-color:#f07916;box-shadow: 0 4px #cb4e00; position:absolute; top:88px; z-index:10; padding-bottom:20px; ">
 			<div class="col-lg-12">
 				<ul>
@@ -36,8 +47,10 @@
 				
 				<%= render :partial => 'user_form'%> 
 
-			</div>
-			<!--header end-->
+			</div> 
+		</div>  
+		
+		 <!--header end-->
 			<div class="clearfix"></div>
 			<!--greybanner start-->
 			<div class="bannermain col-lg-12" >
@@ -254,129 +267,7 @@
 
 					</div>
 				</footer>
-				<!--footer end-->
-				<!--footer nav-->
-				<script type="text/javascript" >
-				var originalNavClasses;
-
-				function toggleNav() {
-					var elem = document.getElementById('navigation_list');
-					var classes = elem.className;
-					if (originalNavClasses === undefined) {
-						originalNavClasses = classes;
-					}
-					elem.className = /expanded/.test(classes) ? originalNavClasses : originalNavClasses + ' expanded';
-				}
-				</script>
-				<!--footer nav-->
-				<!-- js placed at the end of the document so the pages load faster -->
-				<script src="/assets/jquery-1.8.3.min.js"></script>
-			  <script src="/assets/bootstrap.min.js"></script>
-				<script type="text/javascript" src="/assets/hover-dropdown.js"></script>
-				<script defer src="/assets/jquery.flexslider.js"></script>
-				<script type="text/javascript" src="/assets/bxslider/jquery.bxslider.js"></script>
-
-				<script type="text/javascript" src="/assets/jquery.parallax-1.1.3.js"></script>
-
-				<script src="/assets/jquery.easing.js"></script>
-				<script src="/assets/link-hover.js"></script>
-
-		 
-
-				<script type="text/javascript" src="/assets/revolution_slider/rs-plugin/js/jquery.themepunch.plugins.min.js"></script>
-				<script type="text/javascript" src="/assets/revolution_slider/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-
-				<!--common script for all pages-->
-				<script src="/assets/common-scripts.js"></script>
-
-				<script src="/assets/revulation-slide.js"></script> 
-				<script src="/assets/jquery.validate.min.js"></script> 
-				
-
-
-<!--location script start-->
-<script>
-
-function create(first,location,id)
-{
-	var e = document.getElementById(first);
-	var strUser = e.options[e.selectedIndex].value;
-	if(strUser=="a")
-	{
-		var selectop = document.createElement("select");
-		selectop.setAttribute("class", "form-control input-lg m-bot15");
-		selectop.setAttribute("id", id);
-		document.getElementById(location).appendChild(selectop);
-		daySelect = document.getElementById(id);
-		daySelect.innerHTML += "<option value=Middle TN'>Middle TN</option'>";
-		daySelect.innerHTML += "<option value=West TN'>West TN</option'>";
-		daySelect.innerHTML += "<option value=East TN'>East TN</option'>";
-
-
-
-	}
-	else
-	{
-		document.getElementById(location).innerHTML = '';
-	}
-}
-
-
-
-
-
-
-
-
-</script>
-<!--location script end-->
-
-
-<script>
-
-RevSlide.initRevolutionSlider();
-
-$(window).load(function() {
-	$('[data-zlname = reverse-effect]').mateHover({
-		position: 'y-reverse',
-		overlayStyle: 'rolling',
-		overlayBg: '#fff',
-		overlayOpacity: 0.7,
-		overlayEasing: 'easeOutCirc',
-		rollingPosition: 'top',
-		popupEasing: 'easeOutBack',
-		popup2Easing: 'easeOutBack'
-	});
-});
-
-$(window).load(function() {
-	$('.flexslider').flexslider({
-		animation: "slide",
-		start: function(slider) {
-			$('body').removeClass('loading');
-		}
-	});
-});
-
-//    fancybox
-//jQuery(".fancybox").fancybox();
-
-
-
-</script>
-
-
-<script src="/assets/menu/jquery.slicknav.js"></script>
-<script type="text/javascript">
-$(document).ready(function(){
-	$('#menu1').slicknav();   
-  $('#home_page_user_form').validate();
-}); 
-
-
-
-});
-</script>
+			 
 
 
 
