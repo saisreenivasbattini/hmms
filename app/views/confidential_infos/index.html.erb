@@ -1,0 +1,41 @@
+<h1>Listing confidential_infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Practice name</th>
+      <th>Address1</th>
+      <th>Address2</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Qualified info</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @confidential_infos.each do |confidential_info| %>
+      <tr>
+        <td><%= confidential_info.practice_name %></td>
+        <td><%= confidential_info.address1 %></td>
+        <td><%= confidential_info.address2 %></td>
+        <td><%= confidential_info.city %></td>
+        <td><%= confidential_info.state %></td>
+        <td><%= confidential_info.phone %></td>
+        <td><%= confidential_info.email %></td>
+        <td><%= confidential_info.qualified_info_id %></td>
+        <td><%= link_to 'Show', confidential_info %></td>
+        <td><%= link_to 'Edit', edit_confidential_info_path(confidential_info) %></td>
+        <td><%= link_to 'Destroy', confidential_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Confidential info', new_confidential_info_path %>

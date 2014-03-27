@@ -2,6 +2,14 @@
 
 one:
   name: MyString
+<<<<<<< HEAD
 
 two:
   name: MyString
+=======
+  code: MyString
+
+two:
+  name: MyString
+  code: MyString
+>>>>>>> cd54d6534d3e6666b63d418105e9d90ba912843b

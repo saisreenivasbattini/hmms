@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Low:</strong>
+  <%= @mm_range.low %>
+</p>
+
+<p>
+  <strong>High:</strong>
+  <%= @mm_range.high %>
+</p>
+
+<p>
+  <strong>State:</strong>
+   <%= State.where({id: @mm_range.state_id}).first.name%>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <td><%= Region.where({id: @mm_range.region_id}).first.name%></td>
+</p>
+
+
+<%= link_to 'Edit', edit_mm_range_path(@mm_range) %> |
+<%= link_to 'Back', mm_ranges_path %>

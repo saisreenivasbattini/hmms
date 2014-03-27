@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Asking price:</strong>
+  <%= @qualified_info.asking_price %>
+</p>
+
+<p>
+  <strong>Physician net amount:</strong>
+  <%= @qualified_info.physician_net_amount %>
+</p>
+
+<p>
+  <strong>Public information:</strong>
+  <%= @qualified_info.public_information_id %>
+</p>
+
+<%= link_to 'Edit', edit_qualified_info_path(@qualified_info) %> |
+<%= link_to 'Back', qualified_infos_path %>

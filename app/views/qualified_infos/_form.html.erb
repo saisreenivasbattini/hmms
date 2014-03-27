@@ -1,0 +1,29 @@
+<%= form_for(@qualified_info) do |f| %>
+  <% if @qualified_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@qualified_info.errors.count, "error") %> prohibited this qualified_info from being saved:</h2>
+
+      <ul>
+      <% @qualified_info.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :asking_price %><br>
+    <%= f.text_field :asking_price %>
+  </div>
+  <div class="field">
+    <%= f.label :physician_net_amount %><br>
+    <%= f.text_field :physician_net_amount %>
+  </div>
+  <div class="field">
+    <%= f.label :public_information_id %><br>
+    <%= f.select :public_information_id, options_for_select(PublicInformation.all.map { |pub_info| [pub_info.practice_name, pub_info.id] })%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

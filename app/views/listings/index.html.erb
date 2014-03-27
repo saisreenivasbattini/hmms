@@ -1,0 +1,53 @@
+<h1>Listing listings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Region</th>
+      <th>Type of practice</th>
+      <th>Average annual collections</th>
+      <th>Average annual visits</th>
+      <th>Street address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Zip</th>
+      <th>Phone</th>
+      <th>Email</th>
+      <th>Low</th>
+      <th>High</th>
+      <th>User</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @listings.each do |listing| %>
+      <tr>
+        <td><%= listing.state %></td>
+        <td><%= listing.region %></td>
+        <td><%= listing.type_of_practice %></td>
+        <td><%= listing.average_annual_collections %></td>
+        <td><%= listing.average_annual_visits %></td>
+        <td><%= listing.street_address %></td>
+        <td><%= listing.city %></td>
+        <td><%= listing.state %></td>
+        <td><%= listing.zip %></td>
+        <td><%= listing.phone %></td>
+        <td><%= listing.email %></td>
+        <td><%= listing.low %></td>
+        <td><%= listing.high %></td>
+        <td><%= listing.user_id %></td>
+        <td><%= link_to 'Show', listing %></td>
+        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
+        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Listing', new_listing_path %>

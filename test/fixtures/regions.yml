@@ -2,8 +2,16 @@
 
 one:
   name: MyString
+<<<<<<< HEAD
   region_state_id: MyString
 
 two:
   name: MyString
   region_state_id: MyString
+=======
+  state_id: 1
+
+two:
+  name: MyString
+  state_id: 1
+>>>>>>> cd54d6534d3e6666b63d418105e9d90ba912843b

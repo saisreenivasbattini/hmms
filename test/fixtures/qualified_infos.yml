@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  asking_price: 9.99
+  physician_net_amount: 9.99
+  public_information_id: 1
+
+two:
+  asking_price: 9.99
+  physician_net_amount: 9.99
+  public_information_id: 1

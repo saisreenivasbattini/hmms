@@ -1,0 +1,1 @@
+json.extract! @listing, :id, :state, :region, :type_of_practice, :average_annual_collections, :average_annual_visits, :street_address, :city, :state, :zip, :phone, :email, :low, :high, :user_id, :created_at, :updated_at

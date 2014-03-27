@@ -1,0 +1,37 @@
+<%= form_for(@public_information) do |f| %>
+  <% if @public_information.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@public_information.errors.count, "error") %> prohibited this public_information from being saved:</h2>
+
+      <ul>
+      <% @public_information.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :practice_name %><br>
+    <%= f.text_field :practice_name %>
+  </div>
+  <div class="field">
+    <%= f.label :avg_annual_collection %><br>
+    <%= f.text_field :avg_annual_collection %>
+  </div>
+  <div class="field">
+    <%= f.label :avg_annual_visits %><br>
+    <%= f.number_field :avg_annual_visits %>
+  </div>
+  <div class="field">
+    <%= f.label :state_id %><br>
+    <%= f.select :state_id, options_for_select(State.all.map { |state| [state.name, state.id] })%>
+  </div>
+  <div class="field">
+    <%= f.label :region_id %><br>
+    <%= f.select :region_id, options_for_select(Region.all.map { |region| [region.name, region.id] })%>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

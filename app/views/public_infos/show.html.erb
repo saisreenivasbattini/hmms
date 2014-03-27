@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Practice name:</strong>
+  <%= @public_info.practice_name %>
+</p>
+
+<p>
+  <strong>Avg annual collection:</strong>
+  <%= @public_info.avg_annual_collection %>
+</p>
+
+<p>
+  <strong>Avg annual visits:</strong>
+  <%= @public_info.avg_annual_visits %>
+</p>
+
+<%= link_to 'Edit', edit_public_info_path(@public_info) %> |
+<%= link_to 'Back', public_infos_path %>

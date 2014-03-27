@@ -1,0 +1,35 @@
+<h1>Listing public_informations</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Practice name</th>
+      <th>Avg annual collection</th>
+      <th>Avg annual visits</th>
+      <th>State</th>
+      <th>Region</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @public_informations.each do |public_information| %>
+      <tr>
+        <td><%= public_information.practice_name %></td>
+        <td><%= public_information.avg_annual_collection %></td>
+        <td><%= public_information.avg_annual_visits %></td>
+        <td><%= State.where({id: public_information.state_id}).first.name%></td>
+        <td><%= Region.where({id: public_information.region_id}).first.name%></td>
+        <td><%= link_to 'Show', public_information %></td>
+        <td><%= link_to 'Edit', edit_public_information_path(public_information) %></td>
+        <td><%= link_to 'Destroy', public_information, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Public information', new_public_information_path %>

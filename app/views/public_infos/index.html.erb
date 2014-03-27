@@ -1,0 +1,31 @@
+<h1>Listing public_infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Practice name</th>
+      <th>Avg annual collection</th>
+      <th>Avg annual visits</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @public_infos.each do |public_info| %>
+      <tr>
+        <td><%= public_info.practice_name %></td>
+        <td><%= public_info.avg_annual_collection %></td>
+        <td><%= public_info.avg_annual_visits %></td>
+        <td><%= link_to 'Show', public_info %></td>
+        <td><%= link_to 'Edit', edit_public_info_path(public_info) %></td>
+        <td><%= link_to 'Destroy', public_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Public info', new_public_info_path %>
