@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Practice name:</strong>
+  <%= @public_information.practice_name %>
+</p>
+
+<p>
+  <strong>Avg annual collection:</strong>
+  <%= @public_information.avg_annual_collection %>
+</p>
+
+<p>
+  <strong>Avg annual visits:</strong>
+  <%= @public_information.avg_annual_visits %>
+</p>
+
+<p>
+  <strong>State:</strong>
+   <%= State.where({id: @public_information.state_id}).first.name%>
+</p>
+
+<p>
+  <strong>Region:</strong>
+  <td><%= Region.where({id: @public_information.region_id}).first.name%></td>
+</p>
+
+<%= link_to 'Edit', edit_public_information_path(@public_information) %> |
+<%= link_to 'Back', public_informations_path %>

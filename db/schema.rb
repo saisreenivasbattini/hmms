@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140326162325) do
+ActiveRecord::Schema.define(version: 20140327025201) do
+
+  create_table "confidential_infos", force: true do |t|
+    t.string   "practice_name"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "phone"
+    t.string   "email"
+    t.integer  "qualified_info_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "listings", force: true do |t|
     t.string   "state"
@@ -27,6 +40,62 @@ ActiveRecord::Schema.define(version: 20140326162325) do
     t.decimal  "low"
     t.decimal  "high"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "mm_ranges", force: true do |t|
+    t.decimal  "low"
+    t.decimal  "high"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "state_id"
+    t.integer  "region_id"
+  end
+
+  create_table "practices", force: true do |t|
+    t.string   "name"
+    t.string   "code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "public_informations", force: true do |t|
+    t.string   "practice_name"
+    t.decimal  "avg_annual_collection"
+    t.integer  "avg_annual_visits"
+    t.integer  "state_id"
+    t.integer  "region_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "public_infos", force: true do |t|
+    t.string   "practice_name"
+    t.decimal  "avg_annual_collection"
+    t.integer  "avg_annual_visits"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "qualified_infos", force: true do |t|
+    t.decimal  "asking_price"
+    t.decimal  "physician_net_amount"
+    t.integer  "public_information_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "regions", force: true do |t|
+    t.string   "name"
+    t.integer  "state_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "states", force: true do |t|
+    t.string   "name"
+    t.string   "code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -1,0 +1,31 @@
+<h1>Listing qualified_infos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Asking price</th>
+      <th>Physician net amount</th>
+      <th>Public information</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @qualified_infos.each do |qualified_info| %>
+      <tr>
+        <td><%= qualified_info.asking_price %></td>
+        <td><%= qualified_info.physician_net_amount %></td>
+        <td><%= qualified_info.public_information_id %></td>
+        <td><%= link_to 'Show', qualified_info %></td>
+        <td><%= link_to 'Edit', edit_qualified_info_path(qualified_info) %></td>
+        <td><%= link_to 'Destroy', qualified_info, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Qualified info', new_qualified_info_path %>

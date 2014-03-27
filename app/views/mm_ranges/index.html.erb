@@ -1,0 +1,31 @@
+<h1>Listing mm_ranges</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Low</th>
+      <th>High</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @mm_ranges.each do |mm_range| %>
+      <tr>
+        <td><%= mm_range.low %></td>
+        <td><%= mm_range.high %></td>
+         <td><%= State.where({id: mm_range.state_id}).first.name%></td>
+        <td><%= Region.where({id: mm_range.region_id}).first.name%></td>
+        <td><%= link_to 'Show', mm_range %></td>
+        <td><%= link_to 'Edit', edit_mm_range_path(mm_range) %></td>
+        <td><%= link_to 'Destroy', mm_range, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Mm range', new_mm_range_path %>

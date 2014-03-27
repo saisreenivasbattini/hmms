@@ -1,4 +1,20 @@
 Health::Application.routes.draw do
+  resources :practices
+
+  resources :mm_ranges
+
+  resources :confidential_infos
+
+  resources :qualified_infos
+
+  resources :public_informations
+
+  resources :public_infos
+
+  resources :regions
+
+  resources :states
+
   resources :listings
 
  # devise_for :users  

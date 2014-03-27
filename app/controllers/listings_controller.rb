@@ -1,6 +1,6 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
-
+  layout 'admin'
   # GET /listings
   # GET /listings.json
   def index
@@ -39,8 +39,8 @@ class ListingsController < ApplicationController
 
   # PATCH/PUT /listings/1
   # PATCH/PUT /listings/1.json
-  def update  
-    @listing.user_id = current_user.id   
+  def update
+    @listing.user_id = current_user.id
     respond_to do |format|
       if @listing.update(listing_params)
         format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }

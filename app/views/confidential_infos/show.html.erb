@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Practice name:</strong>
+  <%= @confidential_info.practice_name %>
+</p>
+
+<p>
+  <strong>Address1:</strong>
+  <%= @confidential_info.address1 %>
+</p>
+
+<p>
+  <strong>Address2:</strong>
+  <%= @confidential_info.address2 %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @confidential_info.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @confidential_info.state %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @confidential_info.phone %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @confidential_info.email %>
+</p>
+
+<p>
+  <strong>Qualified info:</strong>
+  <%= @confidential_info.qualified_info_id %>
+</p>
+
+<%= link_to 'Edit', edit_confidential_info_path(@confidential_info) %> |
+<%= link_to 'Back', confidential_infos_path %>

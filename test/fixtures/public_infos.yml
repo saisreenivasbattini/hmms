@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  practice_name: MyString
+  avg_annual_collection: 
+  avg_annual_visits: 1
+
+two:
+  practice_name: MyString
+  avg_annual_collection: 
+  avg_annual_visits: 1
