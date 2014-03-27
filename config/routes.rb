@@ -1,4 +1,6 @@
 Health::Application.routes.draw do
+  get "practice-search", to: 'search#index'
+  get "search", to: 'search#search'
   resources :practices
 
   resources :mm_ranges
@@ -17,9 +19,9 @@ Health::Application.routes.draw do
 
   resources :listings
 
- # devise_for :users  
-  
-  devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions" } 
+ # devise_for :users
+
+  devise_for :users, :controllers => {:registrations => "registrations", :sessions => "sessions" }
   # get "welcome/index"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

@@ -1,15 +1,15 @@
-# development:
-#   adapter: mysql2
-#   database: hmms
-#   host: localhost
-#   username: root
-#   password: tulasi
-#   encoding: 'utf8'
+development:
+  adapter: mysql2
+  database: hmms
+  host: localhost
+  username: root
+  password: tulasi
+  encoding: 'utf8'
 
 # Please comment above lines and un-comment below if you want to use SQLite
 
-development:
-  adapter: sqlite3
-  database: db/development.sqlite3
-  pool: 5
-  timeout: 5000
+# development:
+#   adapter: sqlite3
+#   database: db/development.sqlite3
+#   pool: 5
+#   timeout: 5000

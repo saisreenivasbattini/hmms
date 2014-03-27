@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
+<head>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="/assets/styles3.css">
+
+<link href="/assets/jquery.mCustomScrollbar.css" rel="stylesheet" />
+
+
+
+<div class="status_bar"><div class="left"></div><div class="center"></div><div class="right"></div>
+
+   <div class="wrapper_100">
+   <div class="content_100">
+        <header>
+            <div class="logo"><a href="index.html"> <img src="/assets/logo.png"  alt="logo"> </a></div>
+          <div class="top_right"> <a href="javascript:void(0);"> <span class="linkbutton"><img src="/assets/menu_nav.png"  alt="menus"> </span></a> </div>
+        </header>
+        <div class="clear"> </div>
+
+
+          <section>
+            <div class="tab_menu">
+              <ul>
+              <li id="tab1" class="active">   <span> Practice </span> </li>
+              <li id="tab2">  <span> Equipment </span> </li>
+             </ul>
+           </div>
+           <div class="clear"> </div>
+
+              <div class="tabs">
+                <div class="tab1_content">
+                <h2 class="sub_heading"> Ready to create a listing? </h2>
+                <p class="subtext"> Public Information</p>
+                <p class="subtext1"> This information can be viewed by all HMM visitors</p>
+
+               <div class="sub list">
+
+                     <div class="listing_tab1_left">
+
+                       <label> Type of Practice </label>
+                       <%= select_tag :practice_id, options_for_select(Practice.all.map { |practice| [practice.name, practice.id] })%>
+                        <label> Average Annual Patient Visits</label>
+                          <input type="text" name="visits"  class="input"/>
+                        <label>Average Annual Collections </label>
+                       <div class="input_box"> <span class="input_price">$ </span><input type="text" name="collections" /> </span></div>
+                        <label> Location </label>
+                       <%= select_tag :state_id, options_for_select(State.all.map { |state| [state.name, state.id] })%>
+
+                     <div class="clear"> </div>
+
+                     <p class="text"> (e.g. "Middle Tennessee" or "Central Florida")</p>
+
+                   </div>
+              </div>
+               <div class="sub list">
+                    <div class="listing_tab1_right">
+                    <div class="dollar"> $ </div>
+                     <p> Your MM Range &reg;Value</p>
+                     <div class="tooltip_box">
+                      <span class="arrow_tooltip"> </span>
+                      <textarea rows="5" name="your mm range value">   </textarea>
+                     </div>
+
+
+
+
+
+                   <a href="javascript:void(0);" class="btn2"> generate MM range </a>
+
+                   <p  class="text"> <a href="javascript:void(0);"> How is the MM range calculated? </a>  </p>
+
+
+                   </div>
+               </div>
+               <div class="clear"> </div>
+
+          </div>
+
+
+             <div class="tab_content tab2_content" style="display:none;">
+
+               <div class="sub">
+                   <div class="sub_content">
+                       <h3>  sample text for tab2 content  </h3>
+                   </div>
+                 </div>
+             </div>
+
+         <div class="plus_btn_list">  <img src="/assets/plus_icon.png"  alt="more"></div>
+     </div>
+
+         </section>
+
+
+
+
+    <section>
+    <div class="middle_content_blue">
+      <h2>  Qualified Information</h2>
+      <p> This information can only be viewed by HMM Qualified Buyers.</p>
+
+       <div class="sub list">
+           <div class="left_content">
+            <label> Net Income </label>
+            <div class="input_box"> <span class="input_price">$ </span><input type="text" name="collections" /> </span></div>
+             <label> Asking Price </label>
+            <div class="input_box"> <span class="input_price">$ </span><input type="text" name="collections" /> </span></div>
+             <label> Cash Collection <span class="text_small">(Last 12 months)</span> </label>
+            <div class="input_box"> <span class="input_price">$ </span><input type="text" name="collections" /> </span></div>
+
+            </div>
+      </div>
+
+      <div class="sub list">
+           <div class="right_content">
+            <label> Number of Yearly Patients </label>
+           <input type="number" name="patients list"  class="input"/>
+           <label> Number of Return Patients </label>
+           <input type="number" name="patients list" class="input" />
+          </div>
+      </div>
+     <div class="clear"> </div>
+
+     <div class="middle_btm_content">
+      <label>  Payer Mix </label>
+      <div class="subbox">
+           <div class="subbox_arrow"> </div>
+             <div class="sub_left">
+                  <label> Government </label>
+                  <input type="text" name="amount" /><span class="largetext"> % </span>
+              </div>
+              <div class="sub_middle">
+                 <label> Commercial </label>
+                  <input type="text"  name="amount" /><span class="largetext"> % </span>
+                </div>
+               <div class="sub_last">
+                 <label> Private </label>
+                  <input type="text"  name="amount" /><span class="largetext"> % </span>
+
+               </div>
+             <div class="clear"> </div>
+      </div>
+       <div class="clear"> </div>
+      </div>
+       <div class="clear"> </div>
+    </div>
+     <div class="clear"> </div>
+
+    </section>
+
+     <section>
+        <div class="middle_content_orange">
+                 <div class="plus_icon_blue1_list">  <img src="/assets/plus_icon_blue.png" alt="more"></div>
+           <div class="middle_content_orange_con_100">
+              <h2> Confidential Information </h2>
+              <p> This information can only be viewed by Qualified Buyers who have initiated a purchase transaction for your practice. </p>
+              <div class="sub list">
+                  <label> Practice Name  </label>
+                  <input type="text" name="name"  class="input2"/>
+                  <label> Street Address1  </label>
+                  <input type="text" name="name"  class="input2"/>
+                  <label> Street Address2 </label>
+                  <input type="text" name="name"  class="input2"/>
+              </div>
+
+              <div class="sub list">
+                  <label> City  </label>
+                  <input type="text" name="name"  class="input2"/>
+                  <span class="label1"> State </span>  <span class="label2">  Zip  </span>
+                  <div class="clear"> </div>
+                    <%= select_tag :state_id, options_for_select(State.all.map { |state| [state.name, state.id] }), class: 'select1'%>
+                  <!-- <select class="select1"> <option> select  </option>  </select>    -->
+                  <input type="text" name="name"  class="input3"/>
+                   <div class="clear"> </div>
+                  <label> Phone </label>
+                  <input type="text" name="name"  class="number_input"/>  <input type="text" name="name"  class="number_input"/>  <input type="text" name="name"  class="number_input"/>
+              </div>
+           <div class="clear"> </div>
+           <div style="height:20px;"> </div>
+            </div>
+            <div class="clear"> </div>
+        </div>
+    </section>
+    <section>
+
+      <div class="bottom_con_grey">
+                <div class="plus_icon_yellow_list">  <img src="/assets/plus_icon_yellow.png" alt="more"></div>
+      <div class="bottom_con_main">
+           <h2>  Practice Description </h2>
+            <p> DO mention any equipment included in the sale, number of staff staying on, square footage, etc. DO NOT mention your street, address any other particularly identifying features.</p>
+           <div class="textarea">  <textarea name="description" rows="5" cols="30"></textarea> </div>
+      </div>
+
+      <div class="clear"> </div>
+     </div>
+
+    </section>
+    <section>
+     <div class="bottom_con_white">
+
+            <div class="plus_icon_grey_list">  <img src="/assets/plus_icon_grey.png" alt="more"></div>
+             <div class="bottom_con_main">
+            <h2> Photo Upload </h2>
+            <p style="margin-top:5px;"> Phot will be shown to any Qualified Buyer. To protect your interests. please do not include a photograph of your practice name, street address or any particularly identifying features. Images of the interior of your practice are recommended, including: equipment, reception area or examining rooms. </p>
+            <div class="upload_bg">
+                <div class="upload_bg_arrow"> </div>
+                <p class="upload_text"> Drag & Drop Your Photos Here </p>
+                <p class="upload_textsmall">  We recommend JPG, PNG, PDF, you also <span class="orange">browse your images.</span>  </p>
+             </div>
+       </div>
+
+    <div class="clear"> </div>
+      </div>
+
+    </section>
+    <section>
+       <div class="bottom_con_blue">
+            <div class="plus_icon1_list">  <img src="/assets/plus_icon_white.png" alt="more"></div>
+             <div class="bottom_con_main">
+
+             <h2> You're almost done!</h2>
+              <a href="javascript:void(0);" class="bottom_con_blue_btn button1"> Preview </a>
+              <a href="javascript:void(0);" class="bottom_con_blue_btn button2"> Save for Later </a>
+              <a href="javascript:void(0);" class="bottom_con_blue_btn button3"> Add a listing </a>
+              <a href="javascript:void(0);" class="bottom_con_orange_btn">Publish </a>
+
+
+             </div>
+       </div>
+
+    </section>
+
+    <div class="clear"> </div>
+
+    <footer>
+
+      <div class="footer_top">
+        <p><img src="/assets/logo_icon.png" alt="logo"> <span>&copy;2013 Healthcare MarketMaker </span> </p>
+      </div>
+      <div class="footer"><div class="arrow"> </div> <p class="footer_nav_icon"> <a href="javascript:void(0);" > <img src="/assets/nav_icon.png" alt="navigation"> </a></p></div>
+
+    </footer>
+
+    <section>
+      <div class="register_form" style="display:none;">
+        <div class="register_form_con">
+          <div class="close_btn"> <a href="javascript:void(0);" id="close"><img src="/assets/close.png" width="21" height="22" alt="close"> </a> </div>
+          <h3> Become a Qualified HMM Member</h3>
+           <p> Already a Member? <a href="javascript:void(0);"> Login </a> </p>
+
+           <div class="register_form_con_left">
+              <div class="form_options_bg">  <input name="radio" type="radio" value="" > <span> Provider  </span> <input name="radio" type="radio" value="broker"> <span> Broker </span></div>
+               <label>  Full Name</label>
+               <input type="text" name="name" />
+               <label> License Number</label>
+             <input type="number" name="name" />
+             <div> <input type="checkbox"  /><span class="terms"> I verify that I have read all Terms & Conditions and that I represent no other party than myself.</span></div>
+
+           </div>
+          <div class="register_form_con_right">
+
+               <label>  Email Address </label>
+               <input type="email" name="name" />
+               <label> Password</label>
+               <input type="password" name="name" />
+                <label> Verify Password</label>
+               <input type="password" name="name" />
+               <div class="clear"> </div>
+               <a href="javascript:void(0);" class="signup">     SIGNUP        </a>
+
+          </div>
+
+        </div>
+
+        <div class="form_bg"> </div>
+
+        <div class="clear"> </div>
+
+    </div>
+ </section>
+ <section>
+       <div id="form2" style="display:none;" class="form2">
+
+          <div class="form2_con">
+              <div class="close_btn"> <a href="javascript:void(0);" id="close1"><img src="/assets/close.png" width="21" height="22" alt="close"> </a> </div>
+                   <h3> Congratulations! </h3>
+                   <p> Your Professional information has been verified.<br /> You may now post or shop for listings as a <br /> Qualified HMM Member!</p>
+                   <div class="border_btm"> </div>
+                   <a href="#" class="btn_blue" > Create a Listing </a>
+                   <a href="#" class="blue1" > Browse MarketPlace </a>
+           </div>
+           <div class="form_bg"> </div>
+
+            <div class="clear"> </div>
+
+        </div>
+    </section>
+   </div>
+ </div>
+
+
+
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#tab1").addClass("active");
+    $("#tab1").click(function () {
+    $("#tab1").addClass("active");
+    $("#tab2").removeClass("active");
+
+    $(".tab1_content").show(500);
+      $(".tab2_content").hide(500);
+
+   });
+
+
+  $("#tab2").click(function () {
+    $("#tab2").addClass("active");
+      $("#tab1").removeClass("active");
+
+      $(".tab1_content").hide("slow");
+    $(".tab2_content").show("slow");
+
+   });
+
+$("#register.btn").off('click').on('click', function(){
+  console.log("register");
+    $(".register_form").show();
+    $("#register.btn").addClass("active");
+  $("#close").show();
+});
+
+  $("#close").off('click').on('click',function(){
+  console.log("close");
+    $(".register_form").hide();
+  $("#close").hide();
+  $("#register.btn").removeClass("active");
+  });
+
+   $(".signup").off('click').on('click',function(){
+  console.log("signup");
+    $(".form2").show();
+  $("#close").hide();
+   $(".register_form").hide();
+    $("#register.btn").addClass("active");
+  $("#close1").show();
+  });
+
+  $("#close1").off('click').on('click',function(){
+  console.log("close1");
+    $("#form2").hide();
+  $("#close1").hide();
+   $("#register").removeClass("active");
+
+  });
+  });
+
+</script>
+  <!-- Google CDN jQuery with fallback to local -->
+
+  <script>//!window.jQuery && document.write(unescape('%3Cscript src="js/minified/jquery-1.9.1.min.js"%3E%3C/script%3E'))</script>
+  <!-- custom scrollbars plugin -->
+  <script src="/assets/jquery.mCustomScrollbar.concat.min.js"></script>
+  <script>
+    (function($){
+      $(window).load(function(){
+        $("#content_1").mCustomScrollbar({
+          autoHideScrollbar:true,
+          theme:"light-thin"
+        });
+      });
+    })(jQuery);
+  </script>
+
+</body>
+
+</html>
