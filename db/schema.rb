@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140327025201) do
+ActiveRecord::Schema.define(version: 20140328015603) do
 
   create_table "confidential_infos", force: true do |t|
     t.string   "practice_name"
@@ -26,27 +26,36 @@ ActiveRecord::Schema.define(version: 20140327025201) do
     t.datetime "updated_at"
   end
 
+  create_table "eusers", force: true do |t|
+    t.string   "name"
+    t.string   "email"
+    t.string   "login"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "password"
+  end
+
   create_table "listings", force: true do |t|
     t.string   "state"
     t.string   "region"
     t.string   "type_of_practice"
-    t.decimal  "average_annual_collections"
+    t.decimal  "average_annual_collections", precision: 10, scale: 0
     t.integer  "average_annual_visits"
     t.string   "street_address"
     t.string   "city"
     t.string   "zip"
     t.string   "phone"
     t.string   "email"
-    t.decimal  "low"
-    t.decimal  "high"
+    t.decimal  "low",                        precision: 10, scale: 0
+    t.decimal  "high",                       precision: 10, scale: 0
     t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "mm_ranges", force: true do |t|
-    t.decimal  "low"
-    t.decimal  "high"
+    t.decimal  "low",        precision: 10, scale: 0
+    t.decimal  "high",       precision: 10, scale: 0
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "state_id"
@@ -62,7 +71,7 @@ ActiveRecord::Schema.define(version: 20140327025201) do
 
   create_table "public_informations", force: true do |t|
     t.string   "practice_name"
-    t.decimal  "avg_annual_collection"
+    t.decimal  "avg_annual_collection", precision: 10, scale: 0
     t.integer  "avg_annual_visits"
     t.integer  "state_id"
     t.integer  "region_id"
@@ -72,15 +81,15 @@ ActiveRecord::Schema.define(version: 20140327025201) do
 
   create_table "public_infos", force: true do |t|
     t.string   "practice_name"
-    t.decimal  "avg_annual_collection"
+    t.decimal  "avg_annual_collection", precision: 10, scale: 0
     t.integer  "avg_annual_visits"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   create_table "qualified_infos", force: true do |t|
-    t.decimal  "asking_price"
-    t.decimal  "physician_net_amount"
+    t.decimal  "asking_price",          precision: 10, scale: 0
+    t.decimal  "physician_net_amount",  precision: 10, scale: 0
     t.integer  "public_information_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -120,7 +129,7 @@ ActiveRecord::Schema.define(version: 20140327025201) do
     t.datetime "updated_at"
   end
 
-  add_index "users", ["email"], name: "index_users_on_email", unique: true
-  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+  add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
+  add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
 end

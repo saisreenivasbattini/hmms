@@ -1,4 +1,6 @@
 Health::Application.routes.draw do
+  resources :eusers
+
   get "practice-search", to: 'search#index'
   get "search", to: 'search#search'
   resources :practices

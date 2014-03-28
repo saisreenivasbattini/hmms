@@ -1,0 +1,31 @@
+<h1>Listing eusers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Login</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @eusers.each do |euser| %>
+      <tr>
+        <td><%= euser.name %></td>
+        <td><%= euser.email %></td>
+        <td><%= euser.login %></td>
+        <td><%= link_to 'Show', euser %></td>
+        <td><%= link_to 'Edit', edit_euser_path(euser) %></td>
+        <td><%= link_to 'Destroy', euser, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Euser', new_euser_path %>

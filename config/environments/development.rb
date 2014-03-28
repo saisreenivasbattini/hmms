@@ -20,15 +20,36 @@ Health::Application.configure do
   config.active_support.deprecation = :log
 
   # Raise an error on page load if there are pending migrations
-  config.active_record.migration_error = :page_load   
-  
-  config.action_mailer.default_url_options = {:host => "localhost:5500"}   
-  
+  config.active_record.migration_error = :page_load
+
+  # config.action_mailer.default_url_options = {:host => "localhost:5500"}
+
   config.action_mailer.asset_host = "http://localhost:5500"
-   
 
-  config.action_mailer.smtp_settings = { address: 'localhost', port: 1025 }
 
+  # config.action_mailer.smtp_settings = { address: 'localhost', port: 1025 }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
+#   config.action_mailer.smtp_settings = {
+#   address: "smtp.gmail.com",
+#   port: 587,
+#   authentication: 'plain',
+#   enable_starttls_auto: true,
+#   user_name: 'tulasi.chintha@gmail.com',
+#   password: 'dwuubdwuqfcircml'
+# }
+
+config.action_mailer.smtp_settings = {
+   :address => "mail.authsmtp.com",
+   :port => 2525,
+   :domain => "objectstream.com",
+   :authentication => :login,
+   :user_name => "ac51259",
+   enable_starttls_auto: true,
+   :password => "smtpmail20!4",
+}
   # Debug mode disables concatenation and preprocessing of assets.
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
