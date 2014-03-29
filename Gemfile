@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 gem 'rails', '4.0.2'
 
 # Use sqlite3 as the database for Active Record
-gem 'pg'
+# gem 'pg'
 
 # gem 'mysql2', '0.3.11'
 # Use SCSS for stylesheets
@@ -32,6 +32,9 @@ group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
 end
+group :production do
+  gem "pg"
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
@@ -47,6 +50,6 @@ end
 
 gem 'devise'
 gem 'cancan'
-gem 'mailcatcher'
+# gem 'mailcatcher'
 
 
