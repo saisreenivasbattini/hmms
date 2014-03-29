@@ -21,6 +21,6 @@ module Health
     # config.i18n.default_locale = :de
     config.assets.paths << Rails.root.join('app', 'assets', 'fonts')
     # config.assets.precompile += ['style.css','style3.css','bootstrap.min.css']
-    config.assets.initialize_on_precompile = false
+    config.assets.initialize_on_precompile = true
   end
 end
