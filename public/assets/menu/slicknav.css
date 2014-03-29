@@ -1,0 +1,35 @@
+#navigation {
+    padding: 20px;
+    background-color: #002e4f;
+    color: #fff;
+    text-align: center;
+}
+#navigation ul {
+    display: none;
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 0;
+}
+#navigation ul.expanded {
+    display: block;
+}
+#navigation li a {
+    display: block;
+    padding: 10px 0;
+    border-top: 1px solid #014576;
+    font-size: 1.2em;
+    color: #ccc;
+    text-decoration: none;
+}
+.menu_button {
+    display: block;
+    text-align: right;
+    color: #014576;
+    text-decoration: none;
+	font-weight: bolder !important;
+}
+.menu_button:hover {
+    color: #58cbdb;
+    text-decoration: none;
+}
