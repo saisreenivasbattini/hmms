@@ -504,7 +504,7 @@ ul.about-flex-slides {
     -moz-transform: rotate(45deg);
     -webkit-transform: rotate(45deg);
     width: 15px;
-	display:none\0/;
+	display:none;
 	_display:none;
 }
 
@@ -737,14 +737,12 @@ ul.about-flex-slides {
 /*-------*/
 
 [data-zlname = reverse-effect] [data-zl-popup = link] {
-    background: rgba(256,256,256,1);
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -o-border-radius: 50%;
 }
 
 [data-zlname = reverse-effect] [data-zl-popup = link2] {
-    background: rgba(256,256,256,1);
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -o-border-radius: 50%;

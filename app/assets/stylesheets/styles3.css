@@ -873,9 +873,6 @@ a.signup
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
-    -webkit-box-shadow: 0px 2px 0px rgba(51,0,74,131), 0px 3px 0px rgba(0,0,0,.7);
-    -moz-box-shadow: 0px 2px 0px rgba(51,0,74,131), 0px 3px 0px rgba(0,0,0,.7);
-    box-shadow: 0px 2px 0px rgba(51,0,74,131), 0px 3px 0px rgba(0,0,0,.7);
     margin: 0px auto 0px 2px;
 	text-align: center;
 	-webkit-transition: all .1s ease;
@@ -900,9 +897,6 @@ a.btn_blue
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
-    -webkit-box-shadow: 0px 2px 0px rgba(51,0,74,131), 0px 3px 0px rgba(0,0,0,.7);
-    -moz-box-shadow: 0px 2px 0px rgba(51,0,74,131), 0px 3px 0px rgba(0,0,0,.7);
-    box-shadow: 0px 2px 0px rgba(51,0,74,131), 0px 3px 0px rgba(0,0,0,.7);
     margin: 0px auto;
 	text-align: center;
 	-webkit-transition: all .1s ease;
@@ -917,9 +911,6 @@ a.btn_blue
 	font-weight:600;
 }
 a.signup:active, a.btn_blue:active   {
-    -webkit-box-shadow: 0px 3px 0px rgba(51,0,74,131), 0px 3px 6px rgba(0,0,0,.9);
-    -moz-box-shadow: 0px 3px 0px rgba(51,0,74,131), 0px 3px 6px rgba(0,0,0,.9);
-    box-shadow: 0px 3px 0px rgba(51,0,74,131), 0px 3px 6px rgba(0,0,0,.9);
     position: relative;
   	color:#FFF;
 	text-decoration:none;
@@ -935,9 +926,6 @@ a.blue1
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
-    -webkit-box-shadow: 0px 2px 0px rgba(51,0,74,131), 0px 3px 0px rgba(0,0,0,.7);
-    -moz-box-shadow: 0px 2px 0px rgba(51,0,74,131), 0px 3px 0px rgba(0,0,0,.7);
-    box-shadow: 0px 2px 0px rgba(51,0,74,131), 0px 3px 0px rgba(0,0,0,.7);
     margin: 20px auto;
 	text-align: center;
 	-webkit-transition: all .1s ease;
@@ -952,9 +940,6 @@ a.blue1
 
 }
 a.blue1:active, a.blue1:active   {
-    -webkit-box-shadow: 0px 3px 0px rgba(51,0,74,131), 0px 3px 6px rgba(0,0,0,.9);
-    -moz-box-shadow: 0px 3px 0px rgba(51,0,74,131), 0px 3px 6px rgba(0,0,0,.9);
-    box-shadow: 0px 3px 0px rgba(51,0,74,131), 0px 3px 6px rgba(0,0,0,.9);
     position: relative;
   	color:#FFF;
 	text-decoration:none;
@@ -1357,7 +1342,7 @@ a.btn2:active {
 	font-weight:600;
 	border-bottom:1px solid #3797d4;
 	padding:20px 0px 6px 0px;
-	margin:0px; 0px 5px 0px;
+	margin:0px 0px 5px 0px;
 }
 .bottom_con_grey p,  .bottom_con_white p
 {
@@ -1579,7 +1564,7 @@ a.bottom_con_orange_btn:active {
   	color:#FFF;
 	text-decoration:none;
 }
-..wrapper_100
+.wrapper_100
 {
 	width:98%;
 	height:921px;

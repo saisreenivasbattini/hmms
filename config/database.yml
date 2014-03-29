@@ -36,3 +36,10 @@ development:
   database: hmms
   pool: 5
   password:
+
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: hmms
+  pool: 5
+  password:
