@@ -1,0 +1,34 @@
+<%= form_for(@profile) do |f| %>
+  <%= flash[:notice] %>
+  <ul>
+   <ul>
+    <li class="wrds col-lg-push-1 col-lg-3">First Name</li>
+    <li class="col-lg-push-1 col-lg-8">
+    	<%= f.text_field :first_name, class: 'form-control input-lg m-bot15' %>
+
+    	<!-- <input name="" class="form-control input-lg m-bot15" type="text"> -->
+    </li>
+    <li class="wrds col-lg-push-1 col-lg-3" >Last Name</li>
+    <li class="col-lg-push-1 col-lg-8">
+    	<!-- <input name="" class="form-control input-lg m-bot15" type="text"> -->
+    	 <%= f.text_field :last_name, class: 'form-control input-lg m-bot15"'%>
+    </li>
+    <li class="wrds col-lg-push-1 col-lg-3" >Type of Doctor</li>
+    <li class="col-lg-push-1 col-lg-8">
+    	<!-- <input name="" class="form-control input-lg m-bot15" type="text"> -->
+    	 <%= f.text_field :type_of_doctor, class: 'form-control input-lg m-bot15"'%>
+    </li>
+    <li class="wrds col-lg-push-1 col-lg-3" >License No</li>
+    <li class="col-lg-push-1 col-lg-8">
+    	<!-- <input name="" class="form-control input-lg m-bot15" type="text"> -->
+    	<%= f.text_field :licence_no, class: 'form-control input-lg m-bot8"'%>
+    </li>
+
+
+     <li class="col-lg-push-4 col-lg-6"><button type="submit" class="btn btn-shadow btn-danger">Submit</button></li>
+     
+    
+  </ul>
+
+   
+<% end %>

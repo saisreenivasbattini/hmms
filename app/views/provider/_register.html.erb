@@ -1,0 +1,11 @@
+<%= form_for(@profile) do |f| %>
+  <%= flash[:notice] %>
+  <ul>
+    <li class="wrds col-lg-push-1 col-lg-3">Email</li>
+    <!-- <li class="col-lg-push-1 col-lg-9"><input name="" class="form-control input-lg m-bot15" type="text"> -->
+    <li class="col-lg-push-1 col-lg-9"><%= f.text_field :email, class: 'form-control input-lg m-bot15'%>
+    <%= f.hidden_field :password, value:"#{Digest::SHA1.hexdigest(Time.now.to_s)}" %>
+     <li class="col-lg-push-4 col-lg-8"><button type="submit" class="btn btn-shadow btn-danger">Sign Up</button></li>
+     
+    </ul>
+<% end %>

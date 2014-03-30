@@ -1,0 +1,11 @@
+<ul>
+	<form action="/login" method="post">
+
+	    <li class="wrds col-lg-push-1 col-lg-3">Email</li>
+	    <li class="col-lg-push-1 col-lg-8"><input name="email" class="form-control input-lg m-bot15" type="text"></li>
+	    <li class="wrds col-lg-push-1 col-lg-3" >Password</li>
+	    <li class="col-lg-push-1 col-lg-8"><input name="password" class="form-control input-lg m-bot15" type="password"></li>
+	    <%= hidden_field_tag :authenticity_token, form_authenticity_token -%>
+	     <li class="col-lg-push-4 col-lg-6"><button type="submit" class="btn btn-shadow btn-danger">Submit</button></li>
+    </form>   
+</ul>
