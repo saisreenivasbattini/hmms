@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140328015603) do
+ActiveRecord::Schema.define(version: 20140329145014) do
 
   create_table "confidential_infos", force: true do |t|
     t.string   "practice_name"
@@ -65,6 +65,17 @@ ActiveRecord::Schema.define(version: 20140328015603) do
   create_table "practices", force: true do |t|
     t.string   "name"
     t.string   "code"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "profiles", force: true do |t|
+    t.string   "email"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "type_of_doctor"
+    t.string   "licence_no"
+    t.string   "password"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

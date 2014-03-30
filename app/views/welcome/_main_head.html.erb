@@ -1,0 +1,74 @@
+<!--header start-->
+
+<header class="global-header" >
+	<div class=" col-lg-12">
+		<div class=" col-lg-10 col-md-10 col-sm-9 col-xs-8"> <a href="<%= '/' %>"> <img src="/assets/logo.png" > </a></div>
+
+		<div class="login_text col-lg-1 col-md-1 col-sm-1 col-xs-2">  
+			 <% if current_user %>
+			  <%= link_to 'Logout', destroy_user_session_path, :style => 'color: #e97c00;' %>  
+			 <% else %>  
+			<a onclick="document.getElementById('div_name3').style.display=''; document.getElementById('div_name1').style.display='none';document.getElementById('div_name2').style.display='none';return false;" href="" style="text-decoration:none;"> 
+				<button type="button" class="btn btn-shadow btn-danger" style="width:100px;">Login</button>
+			</a>
+		    <%#= link_to 'Login', new_user_session_path, :style => 'color: #e97c00;' %>  
+			 <% end %>
+		</div>
+		<div class="reg_button col-lg-1 col-md-1 col-sm-1 col-xs-2 ">
+			<a onclick="document.getElementById('div_name1').style.display=''; document.getElementById('div_name2').style.display='';return false;" href="" style="text-decoration:none;"> 
+				<button type="button" class="btn btn-shadow btn-danger" style="width:100px;">REGISTER</button>
+			</a> 
+		</div>
+			<div class="clearfix"></div>
+			<div style="display:none" id="div_name2">
+				<div class=" col-lg-10 col-md-10 col-sm-9 col-xs-8"> <a href="index.html">&nbsp;</a></div>
+
+				<div class="login_text col-lg-1 col-md-1 col-sm-1 col-xs-2">&nbsp;</div>
+				<div class="reg_button col-lg-1 col-md-1 col-sm-1 col-xs-2 "> <a onclick="document.getElementById('div_name1').style.display='none'; document.getElementById('div_name2').style.display='none';return false;" href=""
+					style="text-decoration:none; text-align:right; "> <button type="button" class="btn btn-shadow btn-danger" style="width:100px; height:70px;margin-top:-50px; "><img src="/assets/close.png" ></button></a>  </div>
+				</div>
+
+
+			</div>
+
+ 
+		</header>
+
+  
+		<div id="div_name1"  class="col-lg-12 col-md-12 col-sm-12 col-xs-12 " style="display:none; background-color:#f07916;box-shadow: 0 4px #cb4e00; position:absolute; top:88px; z-index:10; padding-bottom:20px; ">
+			<div class="col-lg-12">
+				<ul>
+					<li style="list-style:none;"><h3 class="wrd_white col-lg-12 col-lg-push-4 col-md-push-4">Become a Qualified HMM Member</h3></li>
+					<li style="list-style:none;" class="forbuy_txt">Already a member?<a href="#">  LOGIN</a></li>
+				</ul>
+			</div>
+			<div class="forbuy col-lg-push-2 col-lg-4 col-md-6 col-sm-6 col-xs-12">
+				<% if session[:new_account_created] && session[:new_account_created] == true  %>  
+				
+				
+				<div class="col-lg-12">
+					<ul>
+						<li style="list-style:none;"><h3 class="wrd_white col-lg-12 col-lg-push-4 col-md-push-4">Congratulations</h3></li>
+						<li style="list-style:none;" class="forbuy_txt">You Professional information has been verified.</li>  
+						<li style="list-style:none;" class="forbuy_txt">You may post or shop for listing as a </li>    
+						<li style="list-style:none;" class="forbuy_txt">Qualified HMM Member!  </li>   
+						<li style="list-style:none;" class="forbuy_txt"> <a type="submit" class="btn btn-shadow btn-info">CREATE A LISTING</a>     </li>   
+						<li style="list-style:none;" class="forbuy_txt"> <a type="submit" class="btn btn-shadow btn-info">BROWSE A MARKET PLACE</a>    </li>    
+					</ul>
+				</div>
+			
+				    <script>    
+				 $(document).ready(function () {   
+					     $('#div_name1').hide();
+					     $('#div_name2').show(); 
+					})
+					   </script>
+				<% else %>  
+				 
+				      <%= render 'welcome/user_form'%> 
+				<% end %>
+
+			</div> 
+		</div>  
+		
+		 <!--header end-->

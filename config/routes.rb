@@ -1,4 +1,9 @@
 Health::Application.routes.draw do
+  get "register", to: 'provider#index'
+  get "provider/login"
+  get "provider/search"
+  resources :profiles
+
   resources :eusers
 
   get "practice-search", to: 'search#index'

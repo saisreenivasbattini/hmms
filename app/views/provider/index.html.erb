@@ -1,0 +1,70 @@
+
+<div class="clearfix"></div>
+    <!--greybanner start-->
+<div class="bannermain col-lg-12" >
+
+    <div class="container">
+        <div class="row" ><br><br>
+            <!--feature start-->
+            <!--<span class="txt_center">
+       
+<h2>A one-stop marketplace <br>
+for buying and selling medical<br>
+practices and equipment.</h2>
+<h2 class="get_started"><a href="#">Get started</a></h2>
+</span>-->
+<div><img src="/assets/regsiration.jpg" ></div>
+  
+            <!--feature end-->
+        </div>
+
+    </div>
+
+</div>
+
+    <!--greybanner end-->
+    <!--content start-->
+<div class="homecontentarea col-lg-12" >
+    <!--container start-->
+    <div class="container">
+        <div class="row" >
+            <!--feature start-->
+       
+          <div class="forbuy col-lg-push-3 col-lg-4 col-md-6 col-sm-6 col-xs-12" style="padding-top:50px;">
+            <%= form_for(@profile) do |f| %>
+              <% if @profile.errors.any? %>
+                  <div id="error_explanation">
+                    <h2><%= pluralize(@profile.errors.count, "error") %> prohibited this profile from being saved:</h2>
+
+                    <ul>
+                    <% @profile.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                    <% end %>
+                    </ul>
+                  </div>
+                <% end %>
+              <ul>
+
+                <li class="wrds col-lg-push-1 col-lg-3">Email</li>
+                <!-- <li class="col-lg-push-1 col-lg-9"><input name="" class="form-control input-lg m-bot15" type="text"> -->
+                <li class="col-lg-push-1 col-lg-9"><%= f.text_field :email, class: 'form-control input-lg m-bot15'%>
+                 <li class="col-lg-push-4 col-lg-8"><button type="submit" class="btn btn-shadow btn-danger">Sign Up</button></li>
+                 
+                </ul>
+            <% end %>
+
+          </div>
+  
+            <!--feature end-->
+        </div>
+
+    </div>
+
+</div>
+
+    <!--content end-->
+
+        
+ <%= render "layouts/bottom_banner" %>
+
+   

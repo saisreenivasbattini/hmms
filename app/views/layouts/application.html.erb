@@ -1,51 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <title>Health</title>
-  <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="Mosaddek">
+<%= render "layouts/head" %>
 
 
-<link rel="stylesheet" href="/assets/menu/style.css">
-<link rel="stylesheet" href="/assets/menu/slicknav.css">
-<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.6.2/modernizr.min.js"></script>
-    <!-- Bootstrap core CSS -->
-    <link href="/assets/bootstrap.min.css" rel="stylesheet">
-    <link href="/assets/theme.css" rel="stylesheet">
-    <link href="/assets/bootstrap-reset.css" rel="stylesheet">
-    <!--external css-->
-    <link href="/assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-    <link rel="stylesheet" href="/assets/flexslider.css"/>
-    <link href="/assets/bxslider/jquery.bxslider.css" rel="stylesheet" />
-    <link href="/assets/fancybox/source/jquery.fancybox.css" rel="stylesheet" />
-
-    <link rel="stylesheet" href="/assets/revolution_slider/css/rs-style.css" media="screen">
-    <link rel="stylesheet" href="/assets/revolution_slider/rs-plugin/css/settings.css" media="screen">
-
-    <!-- Custom styles for this template -->
-  <link href="/assets/style.css" rel="stylesheet">
-   <link href="/assets/style-responsive.css" rel="stylesheet" />
-   	<script src="/assets/jquery.js"></script>
-	 <script src="/assets/jquery.validate.min.js"></script>
-	<script>
-	         $(document).ready(function () {
-
-	    $('#new_user').validate(); 
-
-
-	});
-	</script>
-  <%= csrf_meta_tags %>
-</head>
 <body>
+<%= render "welcome/main_head" %>
 
 <%= yield %>  
 
-
+<%= render "layouts/footer" %>
 
 </body>
 </html>
