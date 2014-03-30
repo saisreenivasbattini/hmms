@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140329145014) do
+ActiveRecord::Schema.define(version: 20140330152434) do
 
   create_table "confidential_infos", force: true do |t|
     t.string   "practice_name"
