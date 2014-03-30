@@ -8,7 +8,7 @@ class ProviderController < ApplicationController
   def login
     if request.post?
        session[:profile] = nil
-       if profile = Profile.where({email: params[:email], password: params[:password]}).first
+       if profile = Profile.where({email: params[:email], password: params[:password].strip}).first
           
           session[:profile] = profile.email
           session[:notice] = 'Please complete profile.'
