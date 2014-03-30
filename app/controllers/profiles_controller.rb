@@ -29,11 +29,21 @@ class ProfilesController < ApplicationController
 
     respond_to do |format|
       if @profile.save
-        UserMailer.welcome_email(@profile).deliver
-        format.html { redirect_to '/register', notice: 'Profile was successfully created.' }
+        session[:message] = nil
+        session[:success_message] = 'Profile was successfully created.'
+        UserMailer.welcome_email(@profile,request.env["HTTP_HOST"]).deliver
+
+        format.html { redirect_to '/success', notice: 'Profile was successfully created.' }
         format.json { render action: 'show', status: :created, location: @profile }
       else
-        format.html { redirect_to '/register', layout: 'application', notice: 'Invalid email or already registered.'}
+        message = ''
+
+        @profile.errors.full_messages.each do |msg|
+            message << msg + '</br>'
+        end 
+        session[:message] = message.html_safe
+        logger.info "#{session[:message]}"
+        format.html { redirect_to "/register", layout: 'application', notice: 'Invalid email or already registered.'}
         format.json { render json: @profile.errors, status: :unprocessable_entity }
       end
     end
@@ -44,7 +54,7 @@ class ProfilesController < ApplicationController
   def update
     respond_to do |format|
       if @profile.update(profile_params)
-        format.html { redirect_to @profile, notice: 'Profile was successfully updated.' }
+        format.html { redirect_to root_url, notice: 'Profile was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -71,7 +81,7 @@ class ProfilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def profile_params
-      params[:profile][:password]= Digest::SHA1.hexdigest(Time.now.to_s)
+      # params[:profile][:password]= Digest::SHA1.hexdigest(Time.now.to_s)
       params.require(:profile).permit(:email, :first_name, :last_name, :type_of_doctor, :licence_no, :password)
     end
 end

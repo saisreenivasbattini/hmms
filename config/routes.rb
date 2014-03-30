@@ -1,7 +1,11 @@
 Health::Application.routes.draw do
   get "register", to: 'provider#index'
-  get "provider/login"
+  get "login", to: 'provider#login'
+  post 'login', to: 'provider#login'
+  get 'success', to: 'provider#success'
   get "provider/search"
+  get 'provider_profile', to: 'provider#profile'
+  get 'logout', to: 'provider#logout'
   resources :profiles
 
   resources :eusers

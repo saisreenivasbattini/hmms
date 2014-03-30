@@ -5,13 +5,11 @@
 		<div class=" col-lg-10 col-md-10 col-sm-9 col-xs-8"> <a href="<%= '/' %>"> <img src="/assets/logo.png" > </a></div>
 
 		<div class="login_text col-lg-1 col-md-1 col-sm-1 col-xs-2">  
-			 <% if current_user %>
-			  <%= link_to 'Logout', destroy_user_session_path, :style => 'color: #e97c00;' %>  
+			 <% if !session[:profile].blank? %>
+			  <%= link_to 'Logout', '/logout', :style => 'color: #e97c00;' %>  
 			 <% else %>  
-			<a onclick="document.getElementById('div_name3').style.display=''; document.getElementById('div_name1').style.display='none';document.getElementById('div_name2').style.display='none';return false;" href="" style="text-decoration:none;"> 
-				<button type="button" class="btn btn-shadow btn-danger" style="width:100px;">Login</button>
-			</a>
-		    <%#= link_to 'Login', new_user_session_path, :style => 'color: #e97c00;' %>  
+			
+		    <%= link_to 'Login', '/login', :style => 'color: #e97c00;' %>  
 			 <% end %>
 		</div>
 		<div class="reg_button col-lg-1 col-md-1 col-sm-1 col-xs-2 ">
