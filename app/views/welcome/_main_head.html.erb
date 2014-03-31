@@ -12,11 +12,13 @@
 		    <%= link_to 'Login', '/login', :style => 'color: #e97c00;' %>  
 			 <% end %>
 		</div>
+		<% if session[:profile].blank? %>
 		<div class="reg_button col-lg-1 col-md-1 col-sm-1 col-xs-2 ">
-			<a onclick="document.getElementById('div_name1').style.display=''; document.getElementById('div_name2').style.display='';return false;" href="" style="text-decoration:none;"> 
+			<a  href="/register" style="text-decoration:none;"> 
 				<button type="button" class="btn btn-shadow btn-danger" style="width:100px;">REGISTER</button>
 			</a> 
 		</div>
+		<% end %>
 			<div class="clearfix"></div>
 			<div style="display:none" id="div_name2">
 				<div class=" col-lg-10 col-md-10 col-sm-9 col-xs-8"> <a href="index.html">&nbsp;</a></div>
