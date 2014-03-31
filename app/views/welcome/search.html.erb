@@ -1,0 +1,58 @@
+
+	<div class="homecontentarea2 col-lg-12" >
+		<div class="container">
+			<div class="row" >
+				<div class="plus_icon" ><img src="/assets/blue_plus.jpg" ></div>
+				
+					
+						<h3 class="txt_center_title">Search Results</h3>
+					
+
+
+				
+			</div>
+			<div class="table-responsive">
+				<table class="table">
+				  <thead>
+				    <tr>
+				      <th>PRACTICE TYPE </th>
+				      <th>LOCATION</th>
+				      <th>MM RANGE</th>
+				    </tr>
+				  </thead>
+
+				  <tbody>
+					  <!-- <tr>
+					  	<td><img src="/assets/chiro_small.png" >Chiropractic Clinic</td>
+					  	<td>Eastern Tennesse</td>
+					  	<td>$500000-7500000</td>
+						</tr>
+						<tr>
+						<td><img src="/assets/chiro_small.png" >Chiropractic Clinic</td>
+					  	<td>Middle Tennesse</td>
+					  	<td>$500000-7500000</td>
+					  <tr>	
+					  	<td><img src="/assets/chiro_small.png" >Chiropractic Clinic</td>
+					  	<td>Western Tennesse</td>
+					  	<td>$500000-7500000</td>
+
+					  </tr>    -->
+					  <% if @result_array.blank? %>
+					  	<tr><td colspan=3>No Results found. </td></tr>
+
+					  <% else %>
+					  <% @result_array.each { |result| %>
+					  	<tr>
+					  	<td><%= result[:practice_type]%></td>
+					  	<td><%= result[:location]%></td>
+					  	<td>$<%= number_to_currency(result[:mm_range_low])%> - <%= number_to_currency(result[:mm_range_high])%></td>
+					  	</tr>
+
+
+					  <%}%>
+					  <% end%>
+				  </tbody>
+				</table>
+			</div>	
+		</div>
+	</div>

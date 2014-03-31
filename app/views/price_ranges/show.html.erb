@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Low:</strong>
+  <%= @price_range.low %>
+</p>
+
+<p>
+  <strong>High:</strong>
+  <%= @price_range.high %>
+</p>
+
+<p>
+  <strong>Range:</strong>
+  <%= @price_range.range %>
+</p>
+
+<%= link_to 'Edit', edit_price_range_path(@price_range) %> |
+<%= link_to 'Back', price_ranges_path %>

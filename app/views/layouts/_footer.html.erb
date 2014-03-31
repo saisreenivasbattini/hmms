@@ -102,5 +102,33 @@ function toggleNav() {
 <script type="text/javascript">
 $(document).ready(function(){
   $('#menu1').slicknav();
+
+  $("#state_id").change(function() {
+    // make a POST call and replace the content
+   
+    jQuery.get('/regions_select' +'?state_id=' + $("#state_id").val() , function(data){
+
+        if (data.length > 0 && data != null && data !== undefined) {
+
+           $("#region_select").html('');
+
+           createSelect(data)
+           $("#region_select").show();
+         } 
+         else
+         {
+          $("#region_select").hide();
+         }
+    })
+    return false;
+  });
+
 });
+
+function createSelect(options){
+    $.each(options,function(index,item){
+           $("#region_select").append($("<option></option>").attr("value", item.id).text(item.name));
+
+    });
+}
 </script>

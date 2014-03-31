@@ -1,11 +1,17 @@
 Health::Application.routes.draw do
+  resources :price_ranges
+
   get "register", to: 'provider#index'
   get "login", to: 'provider#login'
   post 'login', to: 'provider#login'
   get 'success', to: 'provider#success'
   get "provider/search"
+  get 'regions_select', to: 'welcome#regions'
   get 'provider_profile', to: 'provider#profile'
   get 'logout', to: 'provider#logout'
+
+  post 'search_buy', to: 'welcome#search'
+
   resources :profiles
 
   resources :eusers

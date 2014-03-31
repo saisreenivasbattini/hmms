@@ -11,7 +11,7 @@ class ProviderController < ApplicationController
        if profile = Profile.where({email: params[:email], password: params[:password].strip}).first
           
           session[:profile] = profile.email
-          session[:notice] = 'Please complete profile.'
+          # session[:notice] = 'Please complete profile.'
           redirect_to '/provider_profile', notice: 'Please complete profile.'
         else 
           render action: 'login', notice: 'Login failed.'      

@@ -31,39 +31,7 @@
 							<!--feature start-->
 
 							<div class="forbuy col-lg-push-2 col-lg-4 col-md-6 col-sm-6 col-xs-12">
-								<ul>
-									<li><h2>Looking to buy?</h2></li>
-									<li><p>Sreach for free.</p></li>
-									<li class="col-lg-push-1 col-lg-10">Type of Practice</li>
-									<li class="col-lg-push-1 col-lg-10"><!-- <select class="form-control input-lg m-bot15">
-										<option>Solo Practice</option>
-										<option>Group Practices</option>
-										<option>Other Types of Practice</option>
-									</select> -->
-									<%= select_tag :practice_id, options_for_select(Practice.all.map { |practice| [practice.name, practice.id] }), class: 'form-control input-lg m-bot15'%>
-									</li>
-									<li class="col-lg-push-1 col-lg-10">Price Range</li>
-									<li class="col-lg-push-1 col-lg-10"><select class="form-control input-lg m-bot15">
-										<option>200 USD</option>
-										<option>500 USD</option>
-										<option>800 USD</option>
-									</select></li>
-									<li class="col-lg-push-1 col-lg-9">Location</li>
-									<li class="col-lg-push-1 col-lg-10"><select class="form-control input-lg m-bot15" id="firstmenu" onchange="create('firstmenu','location1','tn')">
-										<option>AL</option>
-										<option>NY</option>
-										<option value="a">TN</option>
-										<option>OK</option>
-										<option>NJ</option>
-										<option>WA</option>
-										<option>CA</option>
-										<option>TX</option>
-									</select></li>
-									<li class="col-lg-push-1 col-lg-10" id="location1"> </li>
-									<li class="col-lg-push-3 col-lg-8"><button type="button" class="btn btn-shadow btn-danger">Search Practices</button></li>
-
-									<li class="forbuy_txt col-lg-10">To begin the buying process, you will need to register for an HMM account. <a href="#">Learn more</a> about the buying process.</li>
-								</ul>
+								<%= render 'buy_form' %>
 
 							</div>
 
