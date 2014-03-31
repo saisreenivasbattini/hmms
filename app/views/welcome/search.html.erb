@@ -43,7 +43,7 @@
 					  <% else %>
 					  <% @result_array.each { |result| %>
 					  	<tr>
-					  	<td><%= result[:practice_type]%></td>
+					  	<td><img src="/assets/chiro_small.png" > <%= result[:practice_type]%></td>
 					  	<td><%= result[:location]%></td>
 					  	<td><%= number_to_currency(result[:mm_range_low])%> - <%= number_to_currency(result[:mm_range_high])%></td>
 					  	</tr>
