@@ -8,11 +8,11 @@
 
 # Please comment above lines and un-comment below if you want to use SQLite
 
-# development:
-#   adapter: sqlite3
-#   database: db/development.sqlite3
-#   pool: 5
-#   timeout: 5000
+development:
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
 
 # PostgreSQL. Versions 8.2 and up are supported.
 #
@@ -30,12 +30,12 @@
 # Configure Using Gemfile
 # gem 'pg'
 #
-development:
-  adapter: postgresql
-  encoding: unicode
-  database: hmms
-  pool: 5
-  password:
+# development:
+#   adapter: postgresql
+#   encoding: unicode
+#   database: hmms
+#   pool: 5
+#   password:
 
 production:
   adapter: postgresql
